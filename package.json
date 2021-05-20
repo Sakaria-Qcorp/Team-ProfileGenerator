@@ -1,0 +1,22 @@
+{
+  "name": "team-profilegenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sakaria-Qcorp/Team-ProfileGenerator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sakaria-Qcorp/Team-ProfileGenerator/issues"
+  },
+  "homepage": "https://github.com/Sakaria-Qcorp/Team-ProfileGenerator#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
+}
