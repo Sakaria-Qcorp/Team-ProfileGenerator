@@ -3,7 +3,7 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 
-const HTMLrenderring = require("./lib/htmlRenderer");
+const HTMLrenderring = require("./lib/rendering.js");
 const fs = require("fs");
 
 const teamArrayResults= [];
@@ -41,4 +41,39 @@ async function getManagerInfo(){
 };
 
 getManagerInfo();
-async function employeeQuestions(){}
+async function employeeQuestions(){
+    let response= await inquirer.prompt([
+        {
+            type: 'input',
+            name:'name',
+            message: 'What is the name of the employee? : '
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'Enter the employee ID here: '
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is email for employee? : ',
+        },
+        {
+            type: 'list',
+            name: 'role',
+            message: 'What role does this employee have? : ',
+            choices: ['Engineer', 'Intern', 'Manager']
+        }
+    ]);
+let response2= '';
+    if (response.role === 'Engineer'){
+        response2= await inquirer.prompt([{
+            type: 'input',
+            name:'github',
+            message: 'What is the github username for employee?: ',
+        }]);
+        const engineer= new Engineer(response.name, response.id, response.email, response2.github);
+    }  
+
+
+}
