@@ -36,7 +36,7 @@ async function getManagerInfo(){
     }catch(err){
         return console.log(err);
         }
-        console.log(teamArray);
+        console.log(teamArrayResults);
    employeeQuestions();     
 };
 
@@ -74,7 +74,7 @@ let response2= '';
             name:'github',
             message: 'What is the github username for employee?: ',
         }]);
-        const engineer= new Engineer(response.name, response.id, response.email, response2.github);
+        const engineer = new Engineer(response.name, response.id, response.email, response2.github);
         teamArrayResults.push(engineer);
     } else if (response.role === 'Intern'){
         response2= await inquirer.prompt([{
@@ -92,12 +92,12 @@ let response2= '';
             message: 'What is the office number for the employee?: '
         }]);
         const manager= new Manager(response.name, response.id, response.email, response2.officeNumber);
-        teamArray.push(manager);
+        teamArrayResults.push(manager);
     }
 } catch (err) {
     return console.log(err);
         }
-        console.log(teamArray);
+        console.log(teamArrayResults);
 
         isContinued();
 };

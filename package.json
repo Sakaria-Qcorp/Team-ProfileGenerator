@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/Sakaria-Qcorp/Team-ProfileGenerator#readme",
   "dependencies": {
-    "inquirer": "^8.0.0"
+    "inquirer": "^8.1.0"
   }
 }
