@@ -37,7 +37,8 @@ async function getManagerInfo(){
         return console.log(err);
         }
         console.log(teamArray);
-   question();     
+   employeeQuestions();     
 };
 
 getManagerInfo();
+async function employeeQuestions(){}
