@@ -41,8 +41,10 @@ async function getManagerInfo(){
 };
 
 getManagerInfo();
+
 async function employeeQuestions(){
-    let response= await inquirer.prompt([
+    try {
+        let response= await inquirer.prompt([
         {
             type: 'input',
             name:'name',
@@ -73,7 +75,54 @@ let response2= '';
             message: 'What is the github username for employee?: ',
         }]);
         const engineer= new Engineer(response.name, response.id, response.email, response2.github);
-    }  
+        teamArrayResults.push(engineer);
+    } else if (response.role === 'Intern'){
+        response2= await inquirer.prompt([{
+            type: 'input',
+            name: 'school',
+            message: 'What school is employee currently attending?: '    
+        }]);
+        const intern= new Intern(response.name, response.id, response.email, response2.school);
+        teamArrayResults.push(intern);
+    }
+    else if (response.role === 'Manager'){
+        response2 = await inquirer.prompt([{
+            type: 'input',
+            name: 'officeNumber',
+            message: 'What is the office number for the employee?: '
+        }]);
+        const manager= new Manager(response.name, response.id, response.email, response2.officeNumber);
+        teamArray.push(manager);
+    }
+} catch (err) {
+    return console.log(err);
+        }
+        console.log(teamArray);
+
+        isContinued();
+};
+
+async function isContinued(){
+    const continueW = "";
+    continueW = await inquirer.prompt([{
+        type:'list',
+        name: 'finish',
+        message: 'Would you like to add another employee?: ',
+        choices:[
+            'Yes',
+            'No'
+        ]
+    }]);
+
+    do {
+        employeeQuestions();
+        
+    } while (continueW.finish === "Yes"){
+
+        HTMLrenderring(teamArray);
+
+    };
 
 
-}
+
+};
