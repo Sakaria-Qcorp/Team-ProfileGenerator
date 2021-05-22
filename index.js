@@ -98,15 +98,17 @@ let response2= '';
     return console.log(err);
         }
         console.log(teamArrayResults);
-
-        isContinued();
+        
+ isContinued();
+        
 };
 
+
 async function isContinued(){
-    const continueW = "";
+    let continueW = "";
     continueW = await inquirer.prompt([{
         type:'list',
-        name: 'finish',
+        name: 'wrapUP',
         message: 'Would you like to add another employee?: ',
         choices:[
             'Yes',
@@ -114,14 +116,13 @@ async function isContinued(){
         ]
     }]);
 
-    do {
+    if (continueW.wrapUP === "Yes") {
+
         employeeQuestions();
-        
-    } while (continueW.finish === "Yes"){
+    }else{
 
-        HTMLrenderring(teamArray);
-
-    };
+        HTMLrenderring(teamArrayResults);
+    }
 
 
 
