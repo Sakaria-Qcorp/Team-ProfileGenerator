@@ -4,8 +4,8 @@ describe("getSchool", () => {
 
     it("should console log the school", () => {
 
-        const school = "University of Minnesota - TC"
-        const intern = new Intern("", "", "", school);
+        const school = "University of Minnesota"
+        const intern = new Intern("kk", "kk", "kkk", school);
 
         expect(intern.getSchool()).toBe(school);
     })
