@@ -14,12 +14,12 @@ async function getManagerInfo(){
         {
             type: 'input',
             name: 'name',
-            message: 'Name of the manager.: '
+            message: 'Name of the manager.: ',
         },
         {
             type: 'input',
             name: 'id',
-            message: 'Enter the manager ID here: '
+            message: 'Enter the manager ID here: ',
         },
         {
             type: 'input',
@@ -48,12 +48,12 @@ async function employeeQuestions(){
         {
             type: 'input',
             name:'name',
-            message: 'What is the name of the employee? : '
+            message: 'What is the name of the employee? : ',
         },
         {
             type: 'input',
             name: 'id',
-            message: 'Enter the employee ID here: '
+            message: 'Enter the employee ID here: ',
         },
         {
             type: 'input',
