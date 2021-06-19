@@ -7,7 +7,7 @@ describe("getGitHub", () => {
         const GitHub = "Saka@github.com";
         const employee = new engineer("John", "2", "Ahmed@frr", GitHub);
 
-        expect(employee.getGitHub()).toBe(Github);
+        expect(employee.getGitHub()).toBe(GitHub);
     })
 
 });
